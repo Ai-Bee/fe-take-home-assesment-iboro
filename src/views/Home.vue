@@ -4,4 +4,4 @@
     <p>Welcome to your Vue.js app!</p>
   </div>
 </template>
-<script></script>
+<script lang="ts"></script>

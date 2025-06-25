@@ -5,14 +5,15 @@ import tailwind from 'tailwindcss';
 import { defineConfig } from 'vite';
 import VueDevTools from 'vite-plugin-vue-devtools';
 
-const BASE_PATH = '/';
+  const BASE_PATH = process.env.APP_BASE_PATH || '/';
 
-export default defineConfig(({ mode }) => {
-  return {
+  export default defineConfig(({ mode }) => {
+    return {
     base: BASE_PATH,
     plugins: [vue(), VueDevTools()],
     define: {
-      'process.env.NODE_ENV': JSON.stringify(mode)
+      'process.env.NODE_ENV': JSON.stringify(mode),
+      'process.env.APP_BASE_PATH': JSON.stringify(BASE_PATH),
     },
     resolve: {
       alias: {
